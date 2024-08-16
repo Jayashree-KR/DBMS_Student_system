@@ -1,0 +1,303 @@
+mysql> CREATE DATABASE LAB4;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE LAB4;
+Database changed
+
+mysql> CREATE TABLE STUDENT(USN varchar(20) primary key,SName varchar(30) NOT NULL,Address varchar(30),Phone int UNIQUE,Gender varchar(2));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO STUDENT VALUES('1BI16CS001','Eddie Adams','Kartula,Finland','987654012','M');
+Query OK, 1 row affected (0.01 sec)                                                                                     
+
+mysql> INSERT INTO STUDENT VALUES('1BI16CS002','Alvy Singer','Osaka,Japan','987654013','F');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('1BI16CS003','San','San Angelo,USA','987654014','F');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('1BI16CS004','Andy Dufresne','Scotford,Canada','987654015','F');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('1BI16CS005','Lester Burhnam','Virrat,Finland','987654016','M');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('1BI16CS006','Rose Dewitt Bukater','Nagoya,Japan','987654017','F');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('1BI16CS007','Sean Maguire','Tervo,Finland','987654018','F');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('4SN14CS001','Wilson Vinal','Calgary,Canada','987654037','M');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('4SN14CS002','Maclin D','Ladmark,Australia','987654038','M');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('4SN14CS003','Merlyin M','Winnipeng,Canada','987654039','F');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('4SN14CS004','Natasha','Sabinas,USA','987654040','F');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('4SN14CS005','Bunny','Calgary,Canada','987654027','M');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('4SN14CS006','Bruce','Ladmark,Australia','987654028','M');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('4SN14CS007','Jaisy K','Winnipeng,Canada','987654029','F');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('4SN14CS008','Fride banks','Sabinas,USA','987654030','F');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('4SN14CS009','Craig Octavia','Halsua,Finland','987654031','M');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('4SN14CS010','Shreya Hegde','Surathkal,Mangalore','987654032','F');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES('4SN14CS011','Suraj Bhagya','Kodman,Udupi','987654033','M');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM STUDENT;
++------------+---------------------+---------------------+-----------+--------+
+| USN        | SName               | Address             | Phone     | Gender |
++------------+---------------------+---------------------+-----------+--------+
+| 1BI16CS001 | Eddie Adams         | Kartula,Finland     | 987654012 | M      |
+| 1BI16CS002 | Alvy Singer         | Osaka,Japan         | 987654013 | F      |
+| 1BI16CS003 | San                 | San Angelo,USA      | 987654014 | F      |
+| 1BI16CS004 | Andy Dufresne       | Scotford,Canada     | 987654015 | F      |
+| 1BI16CS005 | Lester Burhnam      | Virrat,Finland      | 987654016 | M      |
+| 1BI16CS006 | Rose Dewitt Bukater | Nagoya,Japan        | 987654017 | F      |
+| 1BI16CS007 | Sean Maguire        | Tervo,Finland       | 987654018 | F      |
+| 4SN14CS001 | Wilson Vinal        | Calgary,Canada      | 987654037 | M      |
+| 4SN14CS002 | Maclin D            | Ladmark,Australia   | 987654038 | M      |
+| 4SN14CS003 | Merlyin M           | Winnipeng,Canada    | 987654039 | F      |
+| 4SN14CS004 | Natasha             | Sabinas,USA         | 987654040 | F      |
+| 4SN14CS005 | Bunny               | Calgary,Canada      | 987654027 | M      |
+| 4SN14CS006 | Bruce               | Ladmark,Australia   | 987654028 | M      |
+| 4SN14CS007 | Jaisy K             | Winnipeng,Canada    | 987654029 | F      |
+| 4SN14CS008 | Fride banks         | Sabinas,USA         | 987654030 | F      |
+| 4SN14CS009 | Craig Octavia       | Halsua,Finland      | 987654031 | M      |
+| 4SN14CS010 | Shreya Hegde        | Surathkal,Mangalore | 987654032 | F      |
+| 4SN14CS011 | Suraj Bhagya        | Kodman,Udupi        | 987654033 | M      |
++------------+---------------------+---------------------+-----------+--------+
+18 rows in set (0.00 sec)
+
+mysql> CREATE TABLE SEMSEC(SSID int primary key,SEM varchar(5),SEC varchar(5));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO SEMSEC VALUES('101','2','A'),('102','2','B'),('103','2','C'),('201','4','A'),('202','4','B'),('203','4','C'),('301','6','A'),('302','6','B'),('303','6','C'),('401','8','A'),('402','8','B'),('403','8','C');
+Query OK, 12 rows affected (0.01 sec)
+Records: 12  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM SEMSEC;
++------+------+------+
+| SSID | SEM  | SEC  |
++------+------+------+
+|  101 | 2    | A    |
+|  102 | 2    | B    |
+|  103 | 2    | C    |
+|  201 | 4    | A    |
+|  202 | 4    | B    |
+|  203 | 4    | C    |
+|  301 | 6    | A    |
+|  302 | 6    | B    |
+|  303 | 6    | C    |
+|  401 | 8    | A    |
+|  402 | 8    | B    |
+|  403 | 8    | C    |
++------+------+------+
+12 rows in set (0.00 sec)
+
+mysql> CREATE TABLE CLASS(USN varchar(20), SS_ID int, primary key(USN,SS_ID),foreign key(USN) REFERENCES STUDENT(USN),fo
+reign key(SS_ID) REFERENCES SEMSEC(SSID));
+
+Query OK, 0 rows affected (0.40 sec)
+
+mysql> INSERT INTO CLASS VALUES('1BI16CS001','201'),('1BI16CS002','201'),('1BI16CS003','201'),('1BI16CS004','202'),('1BI16CS005','202'),('1BI16CS006','203'),('1BI16CS007','203'),('4SN14CS001','401'),('4SN14CS002','401'),('4SN14CS003','401'),('4SN14CS004','401'),('4SN14CS005','402'),('4SN14CS006','402'),('4SN14CS007','402'),('4SN14CS008','402'),('4SN14CS009','403'),('4SN14CS010','403'),('4SN14CS011','403');
+Query OK, 18 rows affected (0.02 sec)
+Records: 18  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM CLASS;
++------------+-------+
+| USN        | SS_ID |
++------------+-------+
+| 1BI16CS001 |   201 |
+| 1BI16CS002 |   201 |
+| 1BI16CS003 |   201 |
+| 1BI16CS004 |   202 |
+| 1BI16CS005 |   202 |
+| 1BI16CS006 |   203 |
+| 1BI16CS007 |   203 |
+| 4SN14CS001 |   401 |
+| 4SN14CS002 |   401 |
+| 4SN14CS003 |   401 |
+| 4SN14CS004 |   401 |
+| 4SN14CS005 |   402 |
+| 4SN14CS006 |   402 |
+| 4SN14CS007 |   402 |
+| 4SN14CS008 |   402 |
+| 4SN14CS009 |   403 |
+| 4SN14CS010 |   403 |
+| 4SN14CS011 |   403 |
++------------+-------+
+18 rows in set (0.01 sec)
+
+mysql> CREATE TABLE SUBJECT(Subcode varchar(20) primary key , Sub_Title varchar(30) NOT NULL ,Sem int, Credits int);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT SUBJECT VALUES('10CS21','C Programming','2','4'),('10CS82','System Modeling and Design','8','4'),('10CS83','Storage Area Network','8','2');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM SUBJECT;
++---------+----------------------------+------+---------+
+| Subcode | Sub_Title                  | Sem  | Credits |
++---------+----------------------------+------+---------+
+| 10CS21  | C Programming              |    2 |       4 |
+| 10CS82  | System Modeling and Design |    8 |       4 |
+| 10CS83  | Storage Area Network       |    8 |       2 |
++---------+----------------------------+------+---------+
+3 rows in set (0.00 sec)
+
+mysql> CREATE TABLE IAMARKS(USN varchar(20),SubCode varchar(20),SSid int,Test1 int, Test2 int, Test3 int,Final_IA float ,primary key(USN,SubCode,SSid),foreign key(USN,SSid) REFERENCES CLASS(USN,SS_ID),foreign key(SubCode) REFERENCES SUBJECT(Subcode));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> INSERT INTO IAMARKS VALUES('4SN14CS001','10CS82','401','11','4','5',NULL),('4SN14CS001','10CS83','401','12','4','3',NULL),('4SN14CS002','10CS82','401','11','2','5',NULL),('4SN14CS002','10CS83','401','9','5','3',NULL),('4SN14CS003','1
+0CS82','401','11','12','5',NULL),('4SN14CS003','10CS83','401','19','15','13',NULL);
+Query OK, 6 rows affected (0.02 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO IAMARKS VALUES('4SN14CS004','10CS82','401','10','15','15',NULL),('4SN14CS004','10CS83','401','10','9','3',NULL),('4SN14CS005','10CS82','402','19','15','15',NULL),('4SN14CS005','10CS83','402','10','16','13',NULL),('4SN14CS006','10CS82','402','16','5','19',NULL),('4SN14CS006','10CS83','402','9','16','18',NULL),('4SN14CS007','10CS82','402','19','15','13',NULL),('4SN14CS007','10CS83','402','10','15','13',NULL),('4SN14CS008','10CS82','402','9','12','17',NULL),('4SN14CS008','10CS83','402','10','11','11',NULL),('4SN14CS009','10CS82','403','14','16','17',NULL),('4SN14CS009','10CS83','403','8','6','2',NULL),('4SN14CS010','10CS82','403','14','12','3',NULL),('4SN14CS010','10CS83','403','10','6','12',NULL),('4SN14CS011','10CS82','403','14','12','1',NULL),('4SN14CS011','10CS83','403','10','16','13',NULL);
+Query OK, 16 rows affected (0.01 sec)
+Records: 16  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM IAMARKS;
++------------+---------+------+-------+-------+-------+----------+
+| USN        | SubCode | SSid | Test1 | Test2 | Test3 | Final_IA |
++------------+---------+------+-------+-------+-------+----------+
+| 4SN14CS001 | 10CS82  |  401 |    11 |     4 |     5 |     NULL |
+| 4SN14CS001 | 10CS83  |  401 |    12 |     4 |     3 |     NULL |
+| 4SN14CS002 | 10CS82  |  401 |    11 |     2 |     5 |     NULL |
+| 4SN14CS002 | 10CS83  |  401 |     9 |     5 |     3 |     NULL |
+| 4SN14CS003 | 10CS82  |  401 |    11 |    12 |     5 |     NULL |
+| 4SN14CS003 | 10CS83  |  401 |    19 |    15 |    13 |     NULL |
+| 4SN14CS004 | 10CS82  |  401 |    10 |    15 |    15 |     NULL |
+| 4SN14CS004 | 10CS83  |  401 |    10 |     9 |     3 |     NULL |
+| 4SN14CS005 | 10CS82  |  402 |    19 |    15 |    15 |     NULL |
+| 4SN14CS005 | 10CS83  |  402 |    10 |    16 |    13 |     NULL |
+| 4SN14CS006 | 10CS82  |  402 |    16 |     5 |    19 |     NULL |
+| 4SN14CS006 | 10CS83  |  402 |     9 |    16 |    18 |     NULL |
+| 4SN14CS007 | 10CS82  |  402 |    19 |    15 |    13 |     NULL |
+| 4SN14CS007 | 10CS83  |  402 |    10 |    15 |    13 |     NULL |
+| 4SN14CS008 | 10CS82  |  402 |     9 |    12 |    17 |     NULL |
+| 4SN14CS008 | 10CS83  |  402 |    10 |    11 |    11 |     NULL |
+| 4SN14CS009 | 10CS82  |  403 |    14 |    16 |    17 |     NULL |
+| 4SN14CS009 | 10CS83  |  403 |     8 |     6 |     2 |     NULL |
+| 4SN14CS010 | 10CS82  |  403 |    14 |    12 |     3 |     NULL |
+| 4SN14CS010 | 10CS83  |  403 |    10 |     6 |    12 |     NULL |
+| 4SN14CS011 | 10CS82  |  403 |    14 |    12 |     1 |     NULL |
+| 4SN14CS011 | 10CS83  |  403 |    10 |    16 |    13 |     NULL |
++------------+---------+------+-------+-------+-------+----------+
+22 rows in set (0.00 sec)
+
+mysql> SELECT S.USN,S.SName FROM STUDENT S , SEMSEC SS, CLASS C WHERE SS.SEM=4 AND SS.SEC='C' AND S.USN= C.USN AND C.SS_
+ID=SS.SSID;
++------------+---------------------+
+| USN        | SName               |
++------------+---------------------+
+| 1BI16CS006 | Rose Dewitt Bukater |
+| 1BI16CS007 | Sean Maguire        |
++------------+---------------------+
+2 rows in set (0.04 sec)
+
+mysql> SELECT C.SS_ID AS Room_Num, SS.SEC AS SEC,SS.SEM AS Semester,SUM(CASE WHEN S.Gender='M' THEN 1 ELSE 0 END) AS MALE,SUM(CASE WHEN S.Gender='F' THEN 1 ELSE 0 END) AS FEMALE FROM CLASS C,STUDENT S, SEMSEC SS WHERE S.USN=C.USN AND SS.SSI
+D=C.SS_ID GROUP BY C.SS_ID;
++----------+------+----------+------+--------+
+| Room_Num | SEC  | Semester | MALE | FEMALE |
++----------+------+----------+------+--------+
+|      201 | A    | 4        |    1 |      2 |
+|      202 | B    | 4        |    1 |      1 |
+|      203 | C    | 4        |    0 |      2 |
+|      401 | A    | 8        |    2 |      2 |
+|      402 | B    | 8        |    2 |      2 |
+|      403 | C    | 8        |    2 |      1 |
++----------+------+----------+------+--------+
+6 rows in set (0.03 sec)
+
+mysql> CREATE VIEW TEST1_MARKS AS SELECT Test1 FROM IAMARKS WHERE USN='4SN14CS001';
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> SELECT * FROM TEST1_MARKS;
++-------+
+| Test1 |
++-------+
+|    11 |
+|    12 |
++-------+
+2 rows in set (0.01 sec)
+
+mysql> UPDATE IAMARKS SET Final_IA =(GREATEST(Test1+Test2,Test2+Test3,Test3+Test1)/2);
+Query OK, 22 rows affected (0.02 sec)
+Rows matched: 22  Changed: 22  Warnings: 0
+
+mysql> SELECT * FROM IAMARKS;
++------------+---------+------+-------+-------+-------+----------+
+| USN        | SubCode | SSid | Test1 | Test2 | Test3 | Final_IA |
++------------+---------+------+-------+-------+-------+----------+
+| 4SN14CS001 | 10CS82  |  401 |    11 |     4 |     5 |        8 |
+| 4SN14CS001 | 10CS83  |  401 |    12 |     4 |     3 |        8 |
+| 4SN14CS002 | 10CS82  |  401 |    11 |     2 |     5 |        8 |
+| 4SN14CS002 | 10CS83  |  401 |     9 |     5 |     3 |        7 |
+| 4SN14CS003 | 10CS82  |  401 |    11 |    12 |     5 |     11.5 |
+| 4SN14CS003 | 10CS83  |  401 |    19 |    15 |    13 |       17 |
+| 4SN14CS004 | 10CS82  |  401 |    10 |    15 |    15 |       15 |
+| 4SN14CS004 | 10CS83  |  401 |    10 |     9 |     3 |      9.5 |
+| 4SN14CS005 | 10CS82  |  402 |    19 |    15 |    15 |       17 |
+| 4SN14CS005 | 10CS83  |  402 |    10 |    16 |    13 |     14.5 |
+| 4SN14CS006 | 10CS82  |  402 |    16 |     5 |    19 |     17.5 |
+| 4SN14CS006 | 10CS83  |  402 |     9 |    16 |    18 |       17 |
+| 4SN14CS007 | 10CS82  |  402 |    19 |    15 |    13 |       17 |
+| 4SN14CS007 | 10CS83  |  402 |    10 |    15 |    13 |       14 |
+| 4SN14CS008 | 10CS82  |  402 |     9 |    12 |    17 |     14.5 |
+| 4SN14CS008 | 10CS83  |  402 |    10 |    11 |    11 |       11 |
+| 4SN14CS009 | 10CS82  |  403 |    14 |    16 |    17 |     16.5 |
+| 4SN14CS009 | 10CS83  |  403 |     8 |     6 |     2 |        7 |
+| 4SN14CS010 | 10CS82  |  403 |    14 |    12 |     3 |       13 |
+| 4SN14CS010 | 10CS83  |  403 |    10 |     6 |    12 |       11 |
+| 4SN14CS011 | 10CS82  |  403 |    14 |    12 |     1 |       13 |
+| 4SN14CS011 | 10CS83  |  403 |    10 |    16 |    13 |     14.5 |
++------------+---------+------+-------+-------+-------+----------+
+22 rows in set (0.00 sec)
+
+mysql> SELECT I.USN,I.Test1,I.Test2,I.Test3,I.Final_Ia,(CASE WHEN I.Final_Ia>=17 AND I.Final_Ia<=20 THEN 'Outstanding' WHEN I.Final_Ia>=12 AND I.Final_Ia<17 THEN 'Average' WHEN I.Final_Ia<12 THEN 'Weak' ELSE 'INVALID' END) AS Grade FROM IAMARKS I,CLASS C,SEMSEC SS WHERE I.USN=C.USN AND C.SS_ID = SS.SSID AND SS.SEM =8 AND SS.SEC IN('A','B','C');
++------------+-------+-------+-------+----------+-------------+
+| USN        | Test1 | Test2 | Test3 | Final_Ia | Grade       |
++------------+-------+-------+-------+----------+-------------+
+| 4SN14CS001 |    11 |     4 |     5 |        8 | Weak        |
+| 4SN14CS001 |    12 |     4 |     3 |        8 | Weak        |
+| 4SN14CS002 |    11 |     2 |     5 |        8 | Weak        |
+| 4SN14CS002 |     9 |     5 |     3 |        7 | Weak        |
+| 4SN14CS003 |    11 |    12 |     5 |     11.5 | Weak        |
+| 4SN14CS003 |    19 |    15 |    13 |       17 | Outstanding |
+| 4SN14CS004 |    10 |    15 |    15 |       15 | Average     |
+| 4SN14CS004 |    10 |     9 |     3 |      9.5 | Weak        |
+| 4SN14CS005 |    19 |    15 |    15 |       17 | Outstanding |
+| 4SN14CS005 |    10 |    16 |    13 |     14.5 | Average     |
+| 4SN14CS006 |    16 |     5 |    19 |     17.5 | Outstanding |
+| 4SN14CS006 |     9 |    16 |    18 |       17 | Outstanding |
+| 4SN14CS007 |    19 |    15 |    13 |       17 | Outstanding |
+| 4SN14CS007 |    10 |    15 |    13 |       14 | Average     |
+| 4SN14CS008 |     9 |    12 |    17 |     14.5 | Average     |
+| 4SN14CS008 |    10 |    11 |    11 |       11 | Weak        |
+| 4SN14CS009 |    14 |    16 |    17 |     16.5 | Average     |
+| 4SN14CS009 |     8 |     6 |     2 |        7 | Weak        |
+| 4SN14CS010 |    14 |    12 |     3 |       13 | Average     |
+| 4SN14CS010 |    10 |     6 |    12 |       11 | Weak        |
+| 4SN14CS011 |    14 |    12 |     1 |       13 | Average     |
+| 4SN14CS011 |    10 |    16 |    13 |     14.5 | Average     |
++------------+-------+-------+-------+----------+-------------+
+22 rows in set (0.00 sec)

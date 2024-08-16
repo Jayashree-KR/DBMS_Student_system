@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h2>Student Registration Form</h2>
+    <form action="personal_details.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="fathersName">Father's Name:</label>
+        <input type="text" id="fathersName" name="fathersName" required><br>
+
+        <label for="mothersName">Mother's Name:</label>
+        <input type="text" id="mothersName" name="mothersName" required><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br>
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category"><br>
+
+        <label for="religion">Religion:</label>
+        <input type="text" id="religion" name="religion"><br>
+
+        <label for="caste">Caste:</label>
+        <input type="text" id="caste" name="caste"><br>
+
+        <label for="emailID">Email:</label>
+        <input type="email" id="emailID" name="emailID"><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state"><br>
+
+        <label for="studyPlace">Study Place:</label>
+        <select id="studyPlace" name="studyPlace" required>
+            <option value="Urban">Urban</option>
+            <option value="Rural">Rural</option>
+        </select><br>
+
+        <label for="study10Medium">10th Medium:</label>
+        <input type="text" id="study10Medium" name="study10Medium"><br>
+
+        <label for="adharNumber">Adhar Number:</label>
+        <input type="text" id="adharNumber" name="adharNumber"><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber"><br>
+
+        <!-- Save and Submit button -->
+        <input type="submit" value="Save and Submit">
+
+        <!-- Next button -->
+        <button type="button" onclick="location.href='twelve.html';">Next</button>
+    </form>
+
+</body>
+</html>

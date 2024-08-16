@@ -1,0 +1,67 @@
+CREATE TABLE Students (AdharNumber VARCHAR(20) PRIMARY KEY,Name VARCHAR(255) NOT NULL,FathersName VARCHAR(255) NOT NULL,MothersName VARCHAR(255) NOT NULL,
+    DOB DATE NOT NULL,
+    Gender VARCHAR(10) NOT NULL,
+    Category VARCHAR(50),
+    Religion VARCHAR(50),
+    Caste VARCHAR(50),
+    EmailID VARCHAR(255) UNIQUE,
+    State VARCHAR(50),
+    StudyPlace ENUM('Urban', 'Rural'),
+    Study10Medium VARCHAR(50),
+    PhoneNumber VARCHAR(15)
+);
+
+CREATE TABLE TwelveMarks (
+    AdharNumber VARCHAR(20) PRIMARY KEY,
+    Subject1 INT,
+    Subject2 INT,
+    Subject3 INT,
+    TotalMarks INT,
+    MaximumMarks INT,
+    FOREIGN KEY (AdharNumber) REFERENCES Students(AdharNumber)
+);
+
+CREATE TABLE TenMarks (
+    AdharNumber VARCHAR(20) PRIMARY KEY,
+    TotalMarks INT,
+    MaximumMarks INT,
+    FOREIGN KEY (AdharNumber) REFERENCES Students(AdharNumber)
+);
+
+CREATE TABLE CollegeEnrollment (
+    AdharNumber VARCHAR(20),
+    CollegeName VARCHAR(255) NOT NULL,
+    CollegeID INT NOT NULL,
+    CourseName VARCHAR(255) NOT NULL,
+    DurationInYears INT NOT NULL,
+    SeatType ENUM('Management', 'GovtAllotted') NOT NULL,
+    Fees DECIMAL(10, 2) NOT NULL, 
+    PRIMARY KEY (AdharNumber, CollegeID, CourseName),
+    FOREIGN KEY (AdharNumber) REFERENCES Students(AdharNumber)
+);
+
+CREATE TABLE StudentAccommodation (
+    AdharNumber VARCHAR(20) PRIMARY KEY,
+    AccommodationType ENUM('Hostel', 'PG', 'Home') NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    Pincode VARCHAR(10) NOT NULL,
+    GuardianPhone VARCHAR(15),
+    FOREIGN KEY (AdharNumber) REFERENCES Students(AdharNumber)
+);
+
+CREATE TABLE CollegeBill (
+    PaymentID INT AUTO_INCREMENT PRIMARY KEY,
+    AdharNumber VARCHAR(20),
+    Status ENUM('Paid', 'Pending') NOT NULL,
+    AmountPaid DECIMAL(10, 2) NOT NULL,
+    PendingAmount DECIMAL(10, 2) NOT NULL,
+    DateOfPayment DATE,
+    FOREIGN KEY (AdharNumber) REFERENCES Students(AdharNumber)
+);
+
+CREATE TABLE ExamResults (
+    AdharNumber VARCHAR(20) PRIMARY KEY,
+    ExamType VARCHAR(50) NOT NULL,
+    ERank INT,
+    FOREIGN KEY (AdharNumber) REFERENCES Students(AdharNumber)
+);
